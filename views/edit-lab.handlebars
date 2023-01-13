@@ -1,0 +1,40 @@
+
+
+<article id="project-id" data-id="{{experiment.project_id}}">
+    <a class="back-btn" href="/project/experiment/{{experiment.id}}" class="mx-5"> &larr; Back to {{experiment.title}}</a>
+    <h1 class="titleformat">Edit Experiment Entry</h1>
+    <form id="edit-lab-form" class="edit-lab-info" data-id="{{experiment.project_id}}">
+        <div id="lab-id" data-id="{{experiment.id}}">
+            <label for="lab-title">Title</label>
+            <input name="lab-title" type="text" value="{{experiment.title}}" />
+        </div>
+        <div>
+            <label for="purpose">Purpose and Hypothesis</label>
+            <textarea id="lab-purpose" name="lab-purpose">{{experiment.purpose_and_hypothesis}}</textarea>
+        </div>
+        <div>
+            <label for="background">Background</label>
+            <textarea id="lab-bg" name="lab-background">{{experiment.background}}</textarea>
+        </div>
+        <div>
+            <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+            <textarea id="lab-protocols" name="lab-protocols">{{experiment.protocols_calculations_reagents_equipment}}</textarea>
+        </div>
+        <div>
+            <label for="Observations">Observations</label>
+            <textarea id="lab-obs" name="lab-observations">{{experiment.observations}}</textarea>
+        </div>
+        <div>
+            <label for="analysis">Analysis</label>
+            <textarea id="lab-analysis" name="lab-analysis">{{experiment.analysis}}</textarea>
+        </div>
+        <div class="btn-div">
+            <button type="submit" class="save-lab-btn">Save Experiment Entry</button>
+            <button type="button" class="delete-lab-btn">Delete Experiment Entry</button>
+        </div>
+    </form>
+</article>
+
+
+<script src="/javascript/edit-lab.js"></script>
+<script src="/javascript/delete-lab.js"></script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Bench Buddy</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+</head>
+
+<body>
+  <div class="wrapper"> 
+    <header>
+       {{#if loggedIn}}
+      <div id="navBar" class="sideNavBar">
+        <a class="closenav" onclick="closeNav()">&times;</a>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/MoleMassCal">Molecular Mass Calculator</a></li>
+        <li><a href="/ncbisearch">PubMed Search</a></li>
+        <li><a id="logout" class="logout-link">logout</a></li>
+        <script src="/javascript/logout.js"></script>
+      </div>
+      <script>
+        function openNavBar() {
+          document.getElementById("navBar").style.width = "350px";
+          document.getElementById("main").style.marginLeft = "350px";
+          document.body.style.backgroundColor = "rgba(188,213,218,0.3)";
+        }
+
+        function closeNav() {
+          document.getElementById("navBar").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+          document.body.style.backgroundColor = "rgb(181, 233, 244)";
+        }
+      </script>
+      {{else}}
+      <h1 class="titleformat">WELCOME TO YOUR LAB BENCH</h1>
+      <a href="/login" class="login-link">login</a>
+      </br>
+      </br>
+      {{/if}}
+    </header>
+    <main id="main">
+      {{#if loggedIn}}
+      <span class="hamburger" style="font-size:40px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
+      {{/if}}
+      {{{body}}}
+    </main>
+    <footer>
+    </footer>
+  </div>
+
+
+</body>
+
+</html>
